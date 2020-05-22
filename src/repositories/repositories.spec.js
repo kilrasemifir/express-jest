@@ -7,7 +7,7 @@ describe('repositories', ()=> {
     let db
 
     beforeAll(()=>{
-        mongoose.connect("mongodb://localhost:27017/demo",{
+        mongoose.connect("mongodb://localhost:27017/test",{
             useNewUrlParser: true,
             useUnifiedTopology: true
         })//.then(data=>console.log(data))
@@ -15,11 +15,13 @@ describe('repositories', ()=> {
     })
 
     afterAll(()=>{
-        db.connection.close()
+        //db.connection.close()
+        db.close()
     })
 
     test('insert film and defined id', async ()=>{
         const film = {'titre':'Godzilla'}
         expect((await filmRepository.save(film)).id).toBeDefined()
     })
+
 })

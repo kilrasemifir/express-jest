@@ -3,9 +3,16 @@ import bodyParser from 'body-parser'
 import { setRouting } from './routing';
 import mongoose from 'mongoose'
 
+require('dotenv').config()
 const multer = require('multer')
 
-mongoose.connect("mongodb://localhost:27017/demo",{
+const dbHost = process.env.DB_HOST || "localhost"
+const dbPort = process.env.DB_PORT || 27017
+const dbName = process.env.DB_NAME || 'demo'
+
+const serverPort = process.env.SERVER_PORT || 80
+
+mongoose.connect(`mongodb://${dbHost}:${dbPort}/${dbName}`,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })//.then(data=>console.log(data))
@@ -24,4 +31,4 @@ server.use(bodyParser.json())
 setRouting(server)
 
 // start server
-server.listen(8080, ()=>console.log( "Server start" ))
+server.listen(serverPort, ()=>console.log( "Server start" ))

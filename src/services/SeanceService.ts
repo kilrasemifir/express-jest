@@ -1,7 +1,6 @@
 import { seanceRepository } from "../repositories/SeanceRepository"
-import { readdirSync, readFileSync, createReadStream } from 'fs';
-import { Stream, Readable } from "stream";
-const stringReplaceStream = require('string-replace-stream')
+import { readFileSync } from 'fs';
+import { Readable } from "stream";
 
 class SeanceService {
 
