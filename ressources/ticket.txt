@@ -1,0 +1,15 @@
+***---===Cine-Express===---***
+ 
+ Film: FILM_TITRE
+
+ Debut: FILM_DEBUT
+ Fin  : FILM_FIN
+ Durée: FILM_DUREE
+
+ Prix : PRIXTTC euros
+
+          Bon film !!
+ numero de la seance :
+    SEANCE_ID
+***---===------------===---***
+
